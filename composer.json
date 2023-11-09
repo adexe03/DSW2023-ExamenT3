@@ -1,0 +1,15 @@
+{
+    "name": "adexe/dsw2023-examen-t3",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Adexe\\Dsw2023ExamenT3\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Adexe"
+        }
+    ],
+    "require": {}
+}
