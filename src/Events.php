@@ -1,6 +1,9 @@
 <?php
 
-use Adexe\ExamenT3\Elements\Services\Service;
+namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+
+use DateTime;
+use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
 
 class Events extends Service
 {

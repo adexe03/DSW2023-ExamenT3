@@ -1,9 +1,9 @@
 <?php
 
-namespace Adexe\ExamenT3\Elements\Products;
+namespace Adexe\Dsw2023ExamenT3\Elements\Products;
 
 use DateTime;
-use Adexe\ExamenT3\Elements\ElementSale;
+use Adexe\Dsw2023ExamenT3\Elements\ElementSale;
 
 class Product extends ElementSale
 {

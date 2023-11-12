@@ -1,15 +1,14 @@
 <?php
-use Adexe\ExamenT3\Elements\Products\Product;
-use Adexe\ExamenT3\Elements\Services\Service;
+
+namespace Adexe\Dsw2023ExamenT3\Elements;
+
+use Adexe\Dsw2023ExamenT3\Elements\Products\Product;
+use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
+
 class Store
 {
   private $elements = [];
-  private $tax = 0.07;
-
-  public function setTax($percentage)
-  {
-    $this->tax = $percentage;
-  }
+  private static $dataFile = '../data/tienda_data.json';
 
   public function insertItem($element)
   {
@@ -19,7 +18,7 @@ class Store
   public function showItems()
   {
     foreach ($this->elements as $element) {
-      echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice($this->tax), 2) . "<br>";
+      echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
     }
   }
 
@@ -27,7 +26,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element instanceof Product) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice($this->tax), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
       }
     }
   }
@@ -36,7 +35,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element instanceof Service) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice($this->tax), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
       }
     }
   }
@@ -45,7 +44,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element->hasExpirationDate()) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice($this->tax), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
       }
     }
   }
@@ -54,7 +53,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if (!$element->hasExpired()) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice($this->tax), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
       }
     }
   }

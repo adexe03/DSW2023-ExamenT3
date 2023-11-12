@@ -1,6 +1,6 @@
 <?php
 
-namespace Adexe\ExamenT3\Elements;
+namespace Adexe\Dsw2023ExamenT3\Elements;
 
 abstract class ElementSale
 {

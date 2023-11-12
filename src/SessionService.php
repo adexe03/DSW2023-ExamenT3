@@ -1,6 +1,8 @@
 <?php
 
-use Adexe\ExamenT3\Elements\Services\Service;
+namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+
+use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
 
 class SessionService extends Service
 {
