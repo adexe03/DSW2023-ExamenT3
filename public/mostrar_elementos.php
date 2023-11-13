@@ -1,13 +1,10 @@
 <?php
-
-// Lee la tienda desde el archivo
-$tiendaData = file_get_contents('../data/tienda_data.json');
-$miTienda = json_decode($tiendaData);
+require 'crear_tienda.php';
 
 // Filtra según los parámetros de la URL
 $mostrar = $_GET['mostrar'] ?? 'todos';
 
-// Muestra los elementos según el filtro
+// Muestra los elementos por filtro
 switch ($mostrar) {
     case 'productos':
         $miTienda->showProducts();

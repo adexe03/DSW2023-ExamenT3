@@ -1,9 +1,9 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements\Products;
+namespace Adexe\Dsw2023ExamenT3;
 
 use DateTime;
-use Adexe\Dsw2023ExamenT3\Elements\ElementSale;
+use Adexe\Dsw2023ExamenT3\ElementSale;
 
 class Product extends ElementSale
 {
@@ -23,10 +23,10 @@ class Product extends ElementSale
 
   public function showFeatures()
   {
-    $characteristics = "Producto: " . $this->name . " Fabricante: " . $this->manufacturer;
-    $characteristics .= " Peso: " . $this->weight . " gramos Volumen: " . $this->volume . " cm3";
+    $characteristics = "Producto: " . $this->name . ", Fabricante: " . $this->manufacturer;
+    $characteristics .= ", Peso: " . $this->weight . " gramos, Volumen: " . $this->volume . " cm3";
     if ($this->hasExpirationDate()) {
-      $characteristics .= " Fecha de caducidad: " . $this->expirationDate;
+      $characteristics .= ", Fecha de caducidad: " . $this->expirationDate . ", ";
     }
     return $characteristics;
   }
@@ -43,7 +43,6 @@ class Product extends ElementSale
       $expiration = new DateTime($this->expirationDate);
       return $today > $expiration;
     }
-    return false;
   }
 
   public function calculateShippingCost()
@@ -86,7 +85,6 @@ class Product extends ElementSale
         return parent::calculateSellingPrice() - $discount;
       }
     }
-
     return parent::calculateSellingPrice();
   }
 }

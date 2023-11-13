@@ -1,9 +1,9 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+namespace Adexe\Dsw2023ExamenT3;
 
 use DateTime;
-use Adexe\Dsw2023ExamenT3\Elements\ElementSale;
+use Adexe\Dsw2023ExamenT3\ElementSale;
 
 class Service extends ElementSale
 {
@@ -17,11 +17,7 @@ class Service extends ElementSale
 
   public function showFeatures()
   {
-    $characteristics = "Servicio: " . $this->name;
-    if ($this->hasExpirationDate()) {
-      $characteristics .= ", Fecha de ejecución: " . $this->executionDate;
-    }
-    return $characteristics;
+    return "Servicio: " . $this->name . ", Fecha de ejecución: " . $this->executionDate;
   }
 
   public function hasExpirationDate()
@@ -36,6 +32,5 @@ class Service extends ElementSale
       $execution = new DateTime($this->executionDate);
       return $today > $execution;
     }
-    return false;
   }
 }

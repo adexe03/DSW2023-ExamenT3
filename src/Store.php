@@ -1,14 +1,13 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements;
+namespace Adexe\Dsw2023ExamenT3;
 
-use Adexe\Dsw2023ExamenT3\Elements\Products\Product;
-use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
+use Adexe\Dsw2023ExamenT3\Product;
+use Adexe\Dsw2023ExamenT3\Service;
 
 class Store
 {
   private $elements = [];
-  private static $dataFile = '../data/tienda_data.json';
 
   public function insertItem($element)
   {
@@ -18,7 +17,7 @@ class Store
   public function showItems()
   {
     foreach ($this->elements as $element) {
-      echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
+      echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "€<br>";
     }
   }
 
@@ -26,7 +25,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element instanceof Product) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "€<br>";
       }
     }
   }
@@ -35,7 +34,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element instanceof Service) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "€<br>";
       }
     }
   }
@@ -44,7 +43,7 @@ class Store
   {
     foreach ($this->elements as $element) {
       if ($element->hasExpirationDate()) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "€<br>";
       }
     }
   }
@@ -52,8 +51,8 @@ class Store
   public function showSaleableItems()
   {
     foreach ($this->elements as $element) {
-      if (!$element->hasExpired()) {
-        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "<br>";
+      if ($element->hasExpired() == false) {
+        echo $element->showFeatures() . " Precio de venta: " . number_format($element->calculateSellingPrice(), 2) . "€<br>";
       }
     }
   }

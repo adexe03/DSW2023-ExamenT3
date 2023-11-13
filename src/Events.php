@@ -1,9 +1,9 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+namespace Adexe\Dsw2023ExamenT3;
 
 use DateTime;
-use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
+use Adexe\Dsw2023ExamenT3\Service;
 
 class Events extends Service
 {
@@ -17,7 +17,7 @@ class Events extends Service
 
   public function showFeatures()
   {
-    return "Evento: " . $this->name . ", Fecha del evento: " . $this->dateEvent;
+    return "Evento: " . $this->name . ", Fecha del evento: " . $this->dateEvent . ", ";
   }
 
   public function hasOcurred()

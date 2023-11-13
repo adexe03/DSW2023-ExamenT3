@@ -1,8 +1,8 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+namespace Adexe\Dsw2023ExamenT3;
 
-use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
+use Adexe\Dsw2023ExamenT3\Service;
 
 class SessionService extends Service
 {
@@ -16,7 +16,7 @@ class SessionService extends Service
 
   public function showFeatures()
   {
-    return "Servicio de sesiones: " . $this->name . ", Sesiones contratadas: " . $this->sessionsContracted;
+    return "Servicio de sesiones: " . $this->name . ", Sesiones contratadas: " . $this->sessionsContracted . ", ";
   }
 
   public function consumeSession()

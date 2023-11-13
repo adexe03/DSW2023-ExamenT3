@@ -1,6 +1,6 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements;
+namespace Adexe\Dsw2023ExamenT3;
 
 abstract class ElementSale
 {
@@ -21,7 +21,7 @@ abstract class ElementSale
 
   public function calculateSellingPrice()
   {
-    $priceWithTax = $this->basePrice * ($this->basePrice * (1 + $this->tax));
+    $priceWithTax = $this->basePrice + ($this->basePrice * (1 + $this->tax));
     return $priceWithTax;
   }
 

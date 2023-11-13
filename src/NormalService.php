@@ -1,8 +1,8 @@
 <?php
 
-namespace Adexe\Dsw2023ExamenT3\Elements\Services;
+namespace Adexe\Dsw2023ExamenT3;
 
-use Adexe\Dsw2023ExamenT3\Elements\Services\Service;
+use Adexe\Dsw2023ExamenT3\Service;
 
 class NormalService extends Service
 {
@@ -13,7 +13,7 @@ class NormalService extends Service
 
   public function showFeatures()
   {
-    return "Servicio normal: " . $this->name;
+    return "Servicio normal: " . $this->name . ", ";
   }
 
   public function calculateSellingPrice()
